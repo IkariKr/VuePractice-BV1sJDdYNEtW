@@ -1,0 +1,15 @@
+<script setup>
+import HelloWorld from './components/HelloWorld.vue'
+</script>
+
+<template>
+<router-view></router-view>
+</template>
+
+<style scoped>
+body{
+  background: #f1f1f1;
+}
+
+
+</style>

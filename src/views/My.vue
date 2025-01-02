@@ -1,0 +1,11 @@
+<script setup>
+
+</script>
+
+<template>
+<div>我的页面</div>
+</template>
+
+<style scoped>
+
+</style>
