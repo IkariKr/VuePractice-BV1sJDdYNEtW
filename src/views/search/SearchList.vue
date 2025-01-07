@@ -71,86 +71,87 @@ import Header from '@/components/search/Header.vue'
       </ul>
     </section>
   </div>
-  
+
 </template>
 
 <style scoped>
-.search-list {
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  height: 150vh;
-  overflow: hidden;
-}
 
-.headers ul {
-  display: flex;
-  justify-content: space-around;
-  padding: 0.2rem 0;
-  font-size: 0.426666rem;
-  background-color: #fff;
-}
+  .search-list {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 150vh;
+    overflow: hidden;
+  }
 
-.headers ul li {
-  display: flex;
-  align-items: center;
-}
+  .headers ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.2rem 0;
+    font-size: 0.426666rem;
+    background-color: #fff;
+  }
 
-.headers ul li>div {
-  padding: 0 0.08rem;
-}
+  .headers ul li {
+    display: flex;
+    align-items: center;
+  }
 
-section {
-  flex: 1;
-  overflow: hidden;
-}
+  .headers ul li>div {
+    padding: 0 0.08rem;
+  }
 
-section ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+  section {
+    flex: 1;
+    overflow: hidden;
+  }
 
-section ul li {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  width: 50%;
-  padding: 0.266666rem;
-}
+  section ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 
-section ul li img {
-  width: 4.533333rem;
-  height: 6.533333rem;
-}
+  section ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 50%;
+    padding: 0.266666rem;
+  }
 
-section ul li h3 {
-  width: 100%;
-  font-size: 0.373333rem;
-  color: #222;
-  font-weight: 400;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  /* 限制在一个块元素显示的文本的行数 */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  background-color: #fff;
-}
+  section ul li img {
+    width: 4.533333rem;
+    height: 6.533333rem;
+  }
 
-section ul li .price {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.166666rem 0.16666rem;
-  width: 100%;
-  font-size: 14px;
-  background-color: #fff;
-}
+  section ul li h3 {
+    width: 100%;
+    font-size: 0.373333rem;
+    color: #222;
+    font-weight: 400;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* 限制在一个块元素显示的文本的行数 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #fff;
+  }
 
-section ul li .price div:first-child span {
-  font-size: 0.32rem;
-  color: black;
-}
+  section ul li .price {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.166666rem 0.16666rem;
+    width: 100%;
+    font-size: 14px;
+    background-color: #fff;
+  }
+
+  section ul li .price div:first-child span {
+    font-size: 0.32rem;
+    color: black;
+  }
 </style>

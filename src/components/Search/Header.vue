@@ -1,11 +1,29 @@
 <script setup>
 import {useRouter} from 'vue-router'
+import {ref} from 'vue'
 let router = useRouter()
 const goBack = ()=> {
   router.back()
 }
+
+let searchValue = ref('')
+
 let goSearchList = () =>{
+  console.log(searchValue.value)
+  if(!searchValue.value)
+    return
+  //保存到本地存储
+  let searchList = localStorage.getItem('searchList') || '[]'
+  let searchArr= JSON.parse(searchList)
+  searchArr.unshift(searchValue.value)
+  localStorage.setItem('searchValue',searchValue.value)
+  const uniqueSet = new Set(searchArr) // ES6 Set 去重
+  const newArray = Array.from(uniqueSet)
+  localStorage.setItem('searchList',JSON.stringify(newArray))
   router.push({name:'list'})
+
+  // let searchList2 = localStorage.getItem('searchList')
+  // console.log(searchList2)
 }
 </script>
 
@@ -15,8 +33,8 @@ let goSearchList = () =>{
       <
     </div>
     <div class="search-main">
-      <form action="" onsubmit='return false'>
-        <input type="search" placeholder="学院风" />
+      <form action="" onsubmit='return false' @keyup.enter="goSearchList">
+        <input type="search" placeholder="学院风" v-model="searchValue"/>
       </form>
     </div>
     <div class="search-btn" @click="goSearchList">搜索</div>
