@@ -11,4 +11,8 @@ import './assets/js/flexible.js'
 //引入字体图标css文件
 import './assets/css/iconfont.css'
 
-createApp(App).use(router).mount('#app')
+//引入vant ui
+import Vant from 'vant'
+import 'vant/lib/index.css';
+
+createApp(App).use(router).use(Vant).mount('#app')

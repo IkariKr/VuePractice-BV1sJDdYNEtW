@@ -76,14 +76,16 @@
 
   import axios from 'axios'
   import {ref, onMounted} from 'vue'
+  import http from '@/components/common/api/request.js'
 
   const goodsList = ref([])
   onMounted(() => {
     fetchData()
   })
   const fetchData = async() =>{
-    const res = await axios.get('/api/index')
-    goodsList.value = res.data.data.goodsList;
+    // const res = await axios.get('/api/index')
+    const res = await http.$axios({url:'/api/index'})
+    goodsList.value = res.goodsList;
   }
 
 </script>

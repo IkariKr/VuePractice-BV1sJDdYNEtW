@@ -1,9 +1,31 @@
 <script setup>
 import Header from '@/components/search/Header.vue'
+import http from '../../components/common/api/request.js'
+
+import {useRouter} from "vue-router";
+import {onMounted} from "vue";
+
+let route =useRouter()
+
+
+onMounted(()=>{
+  getData()
+})
+
+const getData = () =>{
+  http.$axios({
+    url:'/api/goods/shopList',
+    params:{
+      searchName:route.query.key
+    }
+  }).then(res=>{
+    console.log('查询的数据',res)
+  })
+}
+
 </script>
 
 <template>
-
   <div class="search-list">
     <div class="headers">
       <Header></Header>
@@ -75,7 +97,6 @@ import Header from '@/components/search/Header.vue'
 </template>
 
 <style scoped>
-
   .search-list {
     display: flex;
     flex-direction: column;

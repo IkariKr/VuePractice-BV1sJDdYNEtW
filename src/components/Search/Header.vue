@@ -20,7 +20,7 @@ let goSearchList = () =>{
   const uniqueSet = new Set(searchArr) // ES6 Set 去重
   const newArray = Array.from(uniqueSet)
   localStorage.setItem('searchList',JSON.stringify(newArray))
-  router.push({name:'list'})
+  router.push({name:'list',query:{key:searchValue.value}})
 
   // let searchList2 = localStorage.getItem('searchList')
   // console.log(searchList2)

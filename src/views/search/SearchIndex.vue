@@ -1,5 +1,25 @@
 <script setup>
 import Header from '@/components/Search/Header.vue'
+import {onMounted, ref} from 'vue'
+import {showConfirmDialog} from 'vant'
+
+let searchArr = ref([])
+onMounted(()=>{
+  searchArr.value = JSON.parse(localStorage.getItem('searchList')) || []
+})
+const clearSearchHistory = () =>{
+  showConfirmDialog({
+    title: '提示',
+    message: '确定清空搜索记录吗？',
+    onConfirm: () => {
+      localStorage.removeItem('searchList')
+      searchArr.value = []
+    }
+  }).catch(()=>{
+    console.log('取消清空')
+  })
+}
+
 </script>
 
 <template>
@@ -10,14 +30,12 @@ import Header from '@/components/Search/Header.vue'
         <h2>
           <i class="iconfont icon-fangdajing"></i>
           <span>历史搜索</span>
-          <span>清空</span>
+          <span @click="clearSearchHistory">清空</span>
         </h2>
-        <ul class="history-list">
-          <li>茶叶</li>
-          <li>茶叶</li>
-          <li>茶叶</li>
+        <ul v-if="searchArr.length" class="history-list">
+          <li v-for="(item,index) in searchArr" :key="index">{{item}}</li>
         </ul>
-
+        <div v-else>暂无搜索记录</div>
       </div>
     </section>
 
